@@ -24,6 +24,7 @@ overflow-x:hidden;
 }
 
 /* 3D Background */
+
 canvas{
 position:fixed;
 top:0;
@@ -57,7 +58,7 @@ text-shadow:0 0 40px #00f2ff;
 }
 }
 
-/* Services */
+/* SERVICES */
 
 .services{
 display:grid;
@@ -82,7 +83,7 @@ box-shadow:0 0 35px #00f2ff;
 
 .card img{
 width:100%;
-height:250px;
+height:260px;
 object-fit:cover;
 }
 
@@ -115,7 +116,7 @@ transition:0.3s;
 background:white;
 }
 
-/* Form */
+/* FORM */
 
 .form-section{
 max-width:800px;
@@ -200,9 +201,10 @@ background:#1ebe57;
 <body>
 
 <!-- 3D Canvas -->
+
 <canvas id="bg"></canvas>
 
-<!-- Header -->
+<!-- HEADER -->
 
 <header>
 
@@ -219,111 +221,201 @@ background:#1ebe57;
 <section class="services">
 
 <!-- PAN CARD -->
+
 <div class="card">
-<img src="pan.png" alt="PAN Card">
+
+<img src="Pan card correction.png" alt="PAN Card">
+
 <div class="card-content">
+
 <h2>PAN Card Correction</h2>
+
 <p>Name, DOB, Mobile, Address & Photo Correction Service.</p>
+
 <button onclick="selectService('PAN Card Correction')">
+
 Request Service
+
 </button>
+
 </div>
+
 </div>
 
 <!-- AADHAR -->
+
 <div class="card">
-<img src="aadhar.jpeg" alt="Aadhar">
+
+<img src="WhatsApp Image 2026-04-24 at 5.26.22 PM.jpeg" alt="Aadhar">
+
 <div class="card-content">
+
 <h2>Aadhar Address Update</h2>
+
 <p>Fast Aadhar Address Update Service.</p>
+
 <button onclick="selectService('Aadhar Address Update')">
+
 Request Service
+
 </button>
+
 </div>
+
 </div>
 
 <!-- DL MOBILE -->
+
 <div class="card">
-<img src="dlmobile.jpeg" alt="DL Mobile">
+
+<img src="WhatsApp Image 2026-04-25 at 12.10.17 PM.jpeg" alt="DL Mobile">
+
 <div class="card-content">
+
 <h2>DL Mobile Number Link</h2>
+
 <p>DL Number Mobile Link & Correction.</p>
+
 <button onclick="selectService('DL Mobile Number Link')">
+
 Request Service
+
 </button>
+
 </div>
+
 </div>
 
 <!-- VOTER -->
+
 <div class="card">
-<img src="voter.jpeg" alt="Voter">
+
+<img src="WhatsApp Image 2026-04-25 at 12.08.19 PM.jpeg" alt="Voter">
+
 <div class="card-content">
+
 <h2>Voter ID Mobile Link</h2>
+
 <p>Voter Card Mobile Number Link Service.</p>
+
 <button onclick="selectService('Voter ID Mobile Link')">
+
 Request Service
+
 </button>
+
 </div>
+
 </div>
 
 <!-- LEARNING LICENSE -->
+
 <div class="card">
-<img src="ll.jpeg" alt="LL">
+
+<img src="WhatsApp Image 2026-04-25 at 12.08.37 PM.jpeg" alt="LL">
+
 <div class="card-content">
+
 <h2>Learning License Pass</h2>
+
 <p>LL Test Pass & License Services.</p>
+
 <button onclick="selectService('Learning License Pass')">
+
 Request Service
+
 </button>
+
 </div>
+
 </div>
 
 <!-- DL PDF -->
+
 <div class="card">
-<img src="dlpdf.jpeg" alt="DL PDF">
+
+<img src="WhatsApp Image 2026-04-25 at 12.10.02 PM.jpeg" alt="DL PDF">
+
 <div class="card-content">
+
 <h2>DL & RC PDF</h2>
+
 <p>Driving License & RC PDF Download.</p>
+
 <button onclick="selectService('DL & RC PDF')">
+
 Request Service
+
 </button>
+
 </div>
+
 </div>
 
 <!-- PUC -->
+
 <div class="card">
-<img src="puc.jpeg" alt="PUC">
+
+<img src="WhatsApp Image 2026-04-27 at 11.16.45 AM.jpeg" alt="PUC">
+
 <div class="card-content">
+
 <h2>PUC Certificate</h2>
+
 <p>PUC Certificate Instant Service.</p>
+
 <button onclick="selectService('PUC Certificate')">
+
 Request Service
+
 </button>
+
 </div>
+
 </div>
 
 <!-- LL TEST -->
+
 <div class="card">
-<img src="lltest.jpeg" alt="LL Test">
+
+<img src="WhatsApp Image 2026-04-15 at 4.00.44 PM.jpeg" alt="LL Test">
+
 <div class="card-content">
+
 <h2>LL Test Pass</h2>
+
 <p>Learning License Test Pass Service.</p>
+
 <button onclick="selectService('LL Test Pass')">
+
 Request Service
+
 </button>
+
 </div>
+
 </div>
 
 <!-- FULL PAN -->
+
 <div class="card">
-<img src="fullpan.jpeg" alt="Full PAN">
+
+<img src="WhatsApp Image 2026-04-24 at 12.53.15 PM.jpeg" alt="Full PAN">
+
 <div class="card-content">
+
 <h2>Full PAN Correction</h2>
+
 <p>Complete PAN Correction Service.</p>
+
 <button onclick="selectService('Full PAN Correction')">
+
 Request Service
+
 </button>
+
 </div>
+
 </div>
 
 </section>
@@ -382,7 +474,7 @@ Send Request
 
 </section>
 
-<!-- WhatsApp -->
+<!-- WhatsApp Button -->
 
 <a 
 href="https://wa.me/918700872569"
@@ -392,7 +484,7 @@ target="_blank"
 WhatsApp
 </a>
 
-<!-- Footer -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -442,7 +534,7 @@ renderer.setSize(window.innerWidth,window.innerHeight);
 
 camera.position.setZ(30);
 
-/* Torus */
+/* 3D Object */
 
 const geometry = new THREE.TorusGeometry(
 10,
@@ -463,7 +555,7 @@ material
 
 scene.add(torus);
 
-/* Light */
+/* Lights */
 
 const pointLight = new THREE.PointLight(0xffffff);
 
