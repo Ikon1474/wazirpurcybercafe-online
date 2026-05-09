@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wazirpur Cyber Cafe</title>
 
-<!-- 3D Animation -->
+<!-- 3D Library -->
 <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
 
 <style>
@@ -23,6 +23,7 @@ color:white;
 overflow-x:hidden;
 }
 
+/* 3D Background */
 canvas{
 position:fixed;
 top:0;
@@ -55,6 +56,8 @@ to{
 text-shadow:0 0 40px #00f2ff;
 }
 }
+
+/* Services */
 
 .services{
 display:grid;
@@ -92,6 +95,10 @@ color:#00f2ff;
 margin-bottom:10px;
 }
 
+.card p{
+line-height:1.6;
+}
+
 .card button{
 margin-top:15px;
 padding:12px 20px;
@@ -107,6 +114,8 @@ transition:0.3s;
 .card button:hover{
 background:white;
 }
+
+/* Form */
 
 .form-section{
 max-width:800px;
@@ -129,7 +138,9 @@ backdrop-filter:blur(10px);
 box-shadow:0 0 25px rgba(0,242,255,0.4);
 }
 
-input, textarea, select{
+input,
+textarea,
+select{
 width:100%;
 padding:15px;
 margin:12px 0;
@@ -162,108 +173,156 @@ font-size:18px;
 color:#ccc;
 }
 
+/* WhatsApp Button */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-size:20px;
+font-weight:bold;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+z-index:1000;
+}
+
+.whatsapp:hover{
+background:#1ebe57;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- 3D Canvas -->
 <canvas id="bg"></canvas>
 
+<!-- Header -->
+
 <header>
+
 <h1>Wazirpur Cyber Cafe</h1>
+
 <p>📞 8700872569</p>
+
 <p>📧 wazirpurcybercafe@gmail.com</p>
+
 </header>
+
+<!-- SERVICES -->
 
 <section class="services">
 
 <!-- PAN CARD -->
 <div class="card">
-<img src="Pan card correction.png" alt="PAN Card">
+<img src="pan.png" alt="PAN Card">
 <div class="card-content">
 <h2>PAN Card Correction</h2>
-<p>Name, DOB, Mobile, Address & Photo Correction.</p>
-<button onclick="selectService('PAN Card Correction')">Request Service</button>
+<p>Name, DOB, Mobile, Address & Photo Correction Service.</p>
+<button onclick="selectService('PAN Card Correction')">
+Request Service
+</button>
 </div>
 </div>
 
 <!-- AADHAR -->
 <div class="card">
-<img src="WhatsApp Image 2026-04-24 at 5.26.22 PM.jpeg" alt="Aadhar">
+<img src="aadhar.jpeg" alt="Aadhar">
 <div class="card-content">
 <h2>Aadhar Address Update</h2>
 <p>Fast Aadhar Address Update Service.</p>
-<button onclick="selectService('Aadhar Address Update')">Request Service</button>
+<button onclick="selectService('Aadhar Address Update')">
+Request Service
+</button>
 </div>
 </div>
 
 <!-- DL MOBILE -->
 <div class="card">
-<img src="WhatsApp Image 2026-04-25 at 12.10.17 PM.jpeg" alt="DL Mobile">
+<img src="dlmobile.jpeg" alt="DL Mobile">
 <div class="card-content">
 <h2>DL Mobile Number Link</h2>
 <p>DL Number Mobile Link & Correction.</p>
-<button onclick="selectService('DL Mobile Number Link')">Request Service</button>
+<button onclick="selectService('DL Mobile Number Link')">
+Request Service
+</button>
 </div>
 </div>
 
 <!-- VOTER -->
 <div class="card">
-<img src="WhatsApp Image 2026-04-25 at 12.08.19 PM.jpeg" alt="Voter">
+<img src="voter.jpeg" alt="Voter">
 <div class="card-content">
 <h2>Voter ID Mobile Link</h2>
 <p>Voter Card Mobile Number Link Service.</p>
-<button onclick="selectService('Voter ID Mobile Link')">Request Service</button>
+<button onclick="selectService('Voter ID Mobile Link')">
+Request Service
+</button>
 </div>
 </div>
 
 <!-- LEARNING LICENSE -->
 <div class="card">
-<img src="WhatsApp Image 2026-04-25 at 12.08.37 PM.jpeg" alt="LL">
+<img src="ll.jpeg" alt="LL">
 <div class="card-content">
 <h2>Learning License Pass</h2>
 <p>LL Test Pass & License Services.</p>
-<button onclick="selectService('Learning License Pass')">Request Service</button>
+<button onclick="selectService('Learning License Pass')">
+Request Service
+</button>
 </div>
 </div>
 
 <!-- DL PDF -->
 <div class="card">
-<img src="WhatsApp Image 2026-04-25 at 12.10.02 PM.jpeg" alt="DL PDF">
+<img src="dlpdf.jpeg" alt="DL PDF">
 <div class="card-content">
 <h2>DL & RC PDF</h2>
 <p>Driving License & RC PDF Download.</p>
-<button onclick="selectService('DL & RC PDF')">Request Service</button>
+<button onclick="selectService('DL & RC PDF')">
+Request Service
+</button>
 </div>
 </div>
 
 <!-- PUC -->
 <div class="card">
-<img src="WhatsApp Image 2026-04-27 at 11.16.45 AM.jpeg" alt="PUC">
+<img src="puc.jpeg" alt="PUC">
 <div class="card-content">
 <h2>PUC Certificate</h2>
 <p>PUC Certificate Instant Service.</p>
-<button onclick="selectService('PUC Certificate')">Request Service</button>
+<button onclick="selectService('PUC Certificate')">
+Request Service
+</button>
 </div>
 </div>
 
 <!-- LL TEST -->
 <div class="card">
-<img src="WhatsApp Image 2026-04-15 at 4.00.44 PM.jpeg" alt="LL Test">
+<img src="lltest.jpeg" alt="LL Test">
 <div class="card-content">
 <h2>LL Test Pass</h2>
 <p>Learning License Test Pass Service.</p>
-<button onclick="selectService('LL Test Pass')">Request Service</button>
+<button onclick="selectService('LL Test Pass')">
+Request Service
+</button>
 </div>
 </div>
 
-<!-- PAN FULL -->
+<!-- FULL PAN -->
 <div class="card">
-<img src="WhatsApp Image 2026-04-24 at 12.53.15 PM.jpeg" alt="PAN">
+<img src="fullpan.jpeg" alt="Full PAN">
 <div class="card-content">
 <h2>Full PAN Correction</h2>
 <p>Complete PAN Correction Service.</p>
-<button onclick="selectService('Full PAN Correction')">Request Service</button>
+<button onclick="selectService('Full PAN Correction')">
+Request Service
+</button>
 </div>
 </div>
 
@@ -277,6 +336,10 @@ color:#ccc;
 
 <form action="https://formsubmit.co/wazirpurcybercafe@gmail.com" method="POST">
 
+<input type="hidden" name="_captcha" value="false">
+
+<input type="hidden" name="_subject" value="New Customer Request">
+
 <input type="text" name="name" placeholder="Your Name" required>
 
 <input type="tel" name="phone" placeholder="Mobile Number" required>
@@ -284,48 +347,80 @@ color:#ccc;
 <input type="email" name="email" placeholder="Your Email" required>
 
 <select name="service" id="serviceSelect" required>
+
 <option value="">Select Service</option>
+
 <option>PAN Card Correction</option>
+
 <option>Aadhar Address Update</option>
+
 <option>DL Mobile Number Link</option>
+
 <option>Voter ID Mobile Link</option>
+
 <option>Learning License Pass</option>
+
 <option>DL & RC PDF</option>
+
 <option>PUC Certificate</option>
+
 <option>LL Test Pass</option>
+
 <option>Full PAN Correction</option>
+
 </select>
 
 <textarea name="message" rows="5" placeholder="Write Your Request"></textarea>
 
-<button type="submit" class="submit-btn">Send Request</button>
+<button type="submit" class="submit-btn">
 
-</form>
+Send Request
 
-<textarea name="message" rows="5" placeholder="Write Your Request"></textarea>
-
-<button type="submit" class="submit-btn">Send Request</button>
+</button>
 
 </form>
 
 </section>
 
+<!-- WhatsApp -->
+
+<a 
+href="https://wa.me/918700872569"
+class="whatsapp"
+target="_blank"
+>
+WhatsApp
+</a>
+
+<!-- Footer -->
+
 <footer>
+
 © 2026 Wazirpur Cyber Cafe | All Rights Reserved
+
 </footer>
+
+<!-- JAVASCRIPT -->
 
 <script>
 
+/* Select Service */
+
 function selectService(service){
+
 document.getElementById("serviceSelect").value = service;
 
 window.scrollTo({
+
 top:document.querySelector(".form-section").offsetTop,
+
 behavior:"smooth"
+
 });
+
 }
 
-// 3D Animation
+/* 3D Animation */
 
 const scene = new THREE.Scene();
 
@@ -342,41 +437,60 @@ alpha:true
 });
 
 renderer.setPixelRatio(window.devicePixelRatio);
+
 renderer.setSize(window.innerWidth,window.innerHeight);
 
 camera.position.setZ(30);
 
-// Object
-const geometry = new THREE.TorusGeometry(10,3,16,100);
+/* Torus */
+
+const geometry = new THREE.TorusGeometry(
+10,
+3,
+16,
+100
+);
 
 const material = new THREE.MeshStandardMaterial({
 color:0x00f2ff,
 wireframe:true
 });
 
-const torus = new THREE.Mesh(geometry,material);
+const torus = new THREE.Mesh(
+geometry,
+material
+);
 
 scene.add(torus);
 
-// Light
+/* Light */
+
 const pointLight = new THREE.PointLight(0xffffff);
+
 pointLight.position.set(20,20,20);
 
 const ambientLight = new THREE.AmbientLight(0xffffff);
 
 scene.add(pointLight,ambientLight);
 
-// Stars
+/* Stars */
 
 function addStar(){
 
-const geometry = new THREE.SphereGeometry(0.25,24,24);
+const geometry = new THREE.SphereGeometry(
+0.25,
+24,
+24
+);
 
 const material = new THREE.MeshStandardMaterial({
 color:0xffffff
 });
 
-const star = new THREE.Mesh(geometry,material);
+const star = new THREE.Mesh(
+geometry,
+material
+);
 
 const [x,y,z] = Array(3)
 .fill()
@@ -385,24 +499,30 @@ const [x,y,z] = Array(3)
 star.position.set(x,y,z);
 
 scene.add(star);
+
 }
 
 Array(300).fill().forEach(addStar);
 
-// Animation
+/* Animation */
 
 function animate(){
 
 requestAnimationFrame(animate);
 
 torus.rotation.x += 0.01;
+
 torus.rotation.y += 0.005;
+
 torus.rotation.z += 0.01;
 
 renderer.render(scene,camera);
+
 }
 
 animate();
+
+/* Resize */
 
 window.addEventListener('resize',()=>{
 
