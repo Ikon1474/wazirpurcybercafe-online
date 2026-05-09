@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wazirpur Cyber Cafe</title>
+
+<!-- 3D Animation -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#020617;
+color:white;
+overflow-x:hidden;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+header{
+text-align:center;
+padding:40px 20px;
+}
+
+header h1{
+font-size:60px;
+color:#00f2ff;
+text-shadow:0 0 25px #00f2ff;
+animation:glow 2s infinite alternate;
+}
+
+header p{
+font-size:22px;
+margin-top:10px;
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px #00f2ff;
+}
+to{
+text-shadow:0 0 40px #00f2ff;
+}
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+padding:40px;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+border-radius:20px;
+overflow:hidden;
+backdrop-filter:blur(10px);
+transition:0.5s;
+box-shadow:0 0 20px rgba(0,242,255,0.4);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 0 35px #00f2ff;
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card h2{
+color:#00f2ff;
+margin-bottom:10px;
+}
+
+.card button{
+margin-top:15px;
+padding:12px 20px;
+border:none;
+border-radius:10px;
+background:#00f2ff;
+color:black;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.card button:hover{
+background:white;
+}
+
+.form-section{
+max-width:800px;
+margin:auto;
+padding:50px 20px;
+}
+
+.form-section h2{
+text-align:center;
+font-size:45px;
+margin-bottom:30px;
+color:#00f2ff;
+}
+
+form{
+background:rgba(255,255,255,0.08);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+box-shadow:0 0 25px rgba(0,242,255,0.4);
+}
+
+input, textarea, select{
+width:100%;
+padding:15px;
+margin:12px 0;
+border:none;
+border-radius:10px;
+font-size:16px;
+outline:none;
+}
+
+.submit-btn{
+width:100%;
+padding:15px;
+font-size:20px;
+background:#00f2ff;
+border:none;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.submit-btn:hover{
+background:white;
+}
+
+footer{
+text-align:center;
+padding:30px;
+font-size:18px;
+color:#ccc;
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<header>
+<h1>Wazirpur Cyber Cafe</h1>
+<p>📞 8700872569</p>
+<p>📧 wazripurcybercafe@gmail.com</p>
+</header>
+
+<section class="services">
+
+<!-- PAN CARD -->
+<div class="card">
+<img src="Pan card correction.png" alt="PAN Card">
+<div class="card-content">
+<h2>PAN Card Correction</h2>
+<p>Name, DOB, Mobile, Address & Photo Correction.</p>
+<button onclick="selectService('PAN Card Correction')">Request Service</button>
+</div>
+</div>
+
+<!-- AADHAR -->
+<div class="card">
+<img src="WhatsApp Image 2026-04-24 at 5.26.22 PM.jpeg" alt="Aadhar">
+<div class="card-content">
+<h2>Aadhar Address Update</h2>
+<p>Fast Aadhar Address Update Service.</p>
+<button onclick="selectService('Aadhar Address Update')">Request Service</button>
+</div>
+</div>
+
+<!-- DL MOBILE -->
+<div class="card">
+<img src="WhatsApp Image 2026-04-25 at 12.10.17 PM.jpeg" alt="DL Mobile">
+<div class="card-content">
+<h2>DL Mobile Number Link</h2>
+<p>DL Number Mobile Link & Correction.</p>
+<button onclick="selectService('DL Mobile Number Link')">Request Service</button>
+</div>
+</div>
+
+<!-- VOTER -->
+<div class="card">
+<img src="WhatsApp Image 2026-04-25 at 12.08.19 PM.jpeg" alt="Voter">
+<div class="card-content">
+<h2>Voter ID Mobile Link</h2>
+<p>Voter Card Mobile Number Link Service.</p>
+<button onclick="selectService('Voter ID Mobile Link')">Request Service</button>
+</div>
+</div>
+
+<!-- LEARNING LICENSE -->
+<div class="card">
+<img src="WhatsApp Image 2026-04-25 at 12.08.37 PM.jpeg" alt="LL">
+<div class="card-content">
+<h2>Learning License Pass</h2>
+<p>LL Test Pass & License Services.</p>
+<button onclick="selectService('Learning License Pass')">Request Service</button>
+</div>
+</div>
+
+<!-- DL PDF -->
+<div class="card">
+<img src="WhatsApp Image 2026-04-25 at 12.10.02 PM.jpeg" alt="DL PDF">
+<div class="card-content">
+<h2>DL & RC PDF</h2>
+<p>Driving License & RC PDF Download.</p>
+<button onclick="selectService('DL & RC PDF')">Request Service</button>
+</div>
+</div>
+
+<!-- PUC -->
+<div class="card">
+<img src="WhatsApp Image 2026-04-27 at 11.16.45 AM.jpeg" alt="PUC">
+<div class="card-content">
+<h2>PUC Certificate</h2>
+<p>PUC Certificate Instant Service.</p>
+<button onclick="selectService('PUC Certificate')">Request Service</button>
+</div>
+</div>
+
+<!-- LL TEST -->
+<div class="card">
+<img src="WhatsApp Image 2026-04-15 at 4.00.44 PM.jpeg" alt="LL Test">
+<div class="card-content">
+<h2>LL Test Pass</h2>
+<p>Learning License Test Pass Service.</p>
+<button onclick="selectService('LL Test Pass')">Request Service</button>
+</div>
+</div>
+
+<!-- PAN FULL -->
+<div class="card">
+<img src="WhatsApp Image 2026-04-24 at 12.53.15 PM.jpeg" alt="PAN">
+<div class="card-content">
+<h2>Full PAN Correction</h2>
+<p>Complete PAN Correction Service.</p>
+<button onclick="selectService('Full PAN Correction')">Request Service</button>
+</div>
+</div>
+
+</section>
+
+<!-- FORM -->
+
+<section class="form-section">
+
+<h2>Customer Request Form</h2>
+
+<form action="https://formsubmit.co/wazripurcybercafe@gmail.com" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="tel" name="phone" placeholder="Mobile Number" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<select name="service" id="serviceSelect" required>
+<option value="">Select Service</option>
+<option>PAN Card Correction</option>
+<option>Aadhar Address Update</option>
+<option>DL Mobile Number Link</option>
+<option>Voter ID Mobile Link</option>
+<option>Learning License Pass</option>
+<option>DL & RC PDF</option>
+<option>PUC Certificate</option>
+<option>LL Test Pass</option>
+<option>Full PAN Correction</option>
+</select>
+
+<textarea name="message" rows="5" placeholder="Write Your Request"></textarea>
+
+<button type="submit" class="submit-btn">Send Request</button>
+
+</form>
+
+</section>
+
+<footer>
+© 2026 Wazirpur Cyber Cafe | All Rights Reserved
+</footer>
+
+<script>
+
+function selectService(service){
+document.getElementById("serviceSelect").value = service;
+
+window.scrollTo({
+top:document.querySelector(".form-section").offsetTop,
+behavior:"smooth"
+});
+}
+
+// 3D Animation
+
+const scene = new THREE.Scene();
+
+const camera = new THREE.PerspectiveCamera(
+75,
+window.innerWidth/window.innerHeight,
+0.1,
+1000
+);
+
+const renderer = new THREE.WebGLRenderer({
+canvas:document.querySelector('#bg'),
+alpha:true
+});
+
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(window.innerWidth,window.innerHeight);
+
+camera.position.setZ(30);
+
+// Object
+const geometry = new THREE.TorusGeometry(10,3,16,100);
+
+const material = new THREE.MeshStandardMaterial({
+color:0x00f2ff,
+wireframe:true
+});
+
+const torus = new THREE.Mesh(geometry,material);
+
+scene.add(torus);
+
+// Light
+const pointLight = new THREE.PointLight(0xffffff);
+pointLight.position.set(20,20,20);
+
+const ambientLight = new THREE.AmbientLight(0xffffff);
+
+scene.add(pointLight,ambientLight);
+
+// Stars
+
+function addStar(){
+
+const geometry = new THREE.SphereGeometry(0.25,24,24);
+
+const material = new THREE.MeshStandardMaterial({
+color:0xffffff
+});
+
+const star = new THREE.Mesh(geometry,material);
+
+const [x,y,z] = Array(3)
+.fill()
+.map(()=>THREE.MathUtils.randFloatSpread(100));
+
+star.position.set(x,y,z);
+
+scene.add(star);
+}
+
+Array(300).fill().forEach(addStar);
+
+// Animation
+
+function animate(){
+
+requestAnimationFrame(animate);
+
+torus.rotation.x += 0.01;
+torus.rotation.y += 0.005;
+torus.rotation.z += 0.01;
+
+renderer.render(scene,camera);
+}
+
+animate();
+
+window.addEventListener('resize',()=>{
+
+camera.aspect = window.innerWidth/window.innerHeight;
+
+camera.updateProjectionMatrix();
+
+renderer.setSize(window.innerWidth,window.innerHeight);
+
+});
+
+</script>
+
+</body>
+</html>
